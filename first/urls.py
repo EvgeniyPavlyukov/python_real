@@ -25,3 +25,6 @@ urlpatterns = [
     path('', views.first_page),
     path('thanks/', views.thanks_page, name = 'thanks_page')
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
